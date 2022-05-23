@@ -1,0 +1,308 @@
+﻿@{
+    ViewData["Title"] = "SamSung";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SamSung by Minh Nhựt</title>
+    <link rel="stylesheet" href="samsung.css">
+    <style>
+    /* CSS Variables */
+    :root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    }
+
+    html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+    }
+
+    body {
+    background:lightgray;
+    margin: 30px 50px;
+    line-height: 1.4;
+    }
+
+    .btn {
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+    }
+
+    .bnt2{
+    font-weight: bolder;
+    text-decoration:none;
+    color: var(--dark);
+    }
+    img {
+    max-width: 100%;
+    }
+
+    .wrapper {
+    display: grid;
+    grid-gap: 20px;
+    }
+
+    /* Navigation */
+    .main-nav ul {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+    }
+
+    .main-nav a {
+    border-radius: 5px;
+    background:lightsteelblue;
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+    }
+
+    .main-nav a:hover {
+    background: var(--dark);
+    color: var(--light);
+    }
+
+    /* Top Container */
+    .top-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
+    }
+
+    /* Showcase */
+    .showcase {
+    grid-area: showcase;
+    min-height: 400px;
+    background: url(https://media.istockphoto.com/photos/abstract-background-wallpaper-picture-id952039286?b=1&k=20&m=952039286&s=170667a&w=0&h=LmOcMt7FHxFUAr2bOSfTUPV9sQhME6ABtAYLM0cMkR4=);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    }
+
+    .showcase h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: var(--light);
+    }
+
+    .showcase p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: var(--light);
+    }
+
+    /* Top Box */
+    .top-box {
+    background:lightslategray;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    }
+
+    .top-box .price {
+    font-size: 2.5rem;
+    }
+
+    .top-box-a {
+    grid-area: top-box-a;
+    }
+
+    .top-box-b {
+    grid-area: top-box-b;
+    }
+
+    /* Boxes */
+    .boxes {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .box {
+    background:lightseagreen;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+    }
+
+    /* Info */
+    .info {
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+    }
+
+    /* Portfolio */
+    .portfolio {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .portfolio img {
+    width: 100%;
+    box-shadow: var(--shadow);
+    }
+
+    /* Footer */
+    footer {
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem;
+    }
+
+    /* Media Queries */
+    media (max-width: 700px) {
+    .top-container {
+    grid-template-areas:
+    'showcase showcase'
+    'top-box-a top-box-b';
+    }
+
+    .showcase h1 {
+    font-size: 2.5rem;
+    }
+
+    .main-nav ul {
+    grid-template-columns: 1fr;
+    }
+
+    .info {
+    grid-template-columns: 1fr;
+    }
+
+    .info .btn {
+    display: block;
+    text-align: center;
+    margin: auto;
+    }
+    }
+
+    media (max-width: 500px) {
+    .top-container {
+    grid-template-areas:
+    'showcase'
+    'top-box-a'
+    'top-box-b';
+    }
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Navigation -->
+        
+        <!-- Top Container -->
+        <section class="top-container">
+            <header class="showcase">
+                <h1>SamSung</h1>
+                <p>Samsung (tiếng Hàn: 삼성, Romaja: "Samseong", phiên âm chuẩn: "Xam-xoong", Hanja: 三星; phiên âm Hán-Việt: "Tam Tinh" – có nghĩa là "3 ngôi sao") là một tập đoàn đa quốc gia khổng lồ của Hàn Quốc có trụ sở chính được đặt tại khu phức hợp Samsung Town, quận Seocho, thành phố Seoul.</p>
+                <a href="https://vi.wikipedia.org/wiki/Samsung" class="btn">Xem thêm</a>
+            </header>
+            <div class="top-box top-box-a">
+                <h4> Đăng Ký Khách Hàng</h4>
+                <a href="https://localhost:44379/Home" class="btn">Đăng Ký</a>
+            </div>
+            <div class="top-box top-box-b">
+                <h4>Liên Hệ Tư vấn</h4>
+                <p class="price">0889100429</p>
+                <a href="" class="btn">Gọi Ngay</a>
+            </div>
+        </section>
+
+        <!-- Boxes Section -->
+        <section class="boxes">
+            <div class="box">
+                <i class="fas fa-chart-pie fa-4x"></i>
+                <a href="https://localhost:44379/SMartPhones/Details?id=23" class="bnt2">Galaxy Z Fold 2-5G</a>
+                <img src="~/Image/Galaxy Z-Fold 2 5G.png" width="200" height="200" />
+            </div>
+            <div class="box">
+                <i class="fas fa-globe fa-4x"></i>
+                <a href="https://localhost:44379/SMartPhones/Details?id=24" class="bnt2">Galaxy S21-5G</a>
+                <img src="~/Image/CGG_Samsun_galaxys21 5g.jpg" width="200" height="200" />
+
+            </div>
+            <div class="box">
+                <i class="fas fa-cog fa-4x"></i>
+                <a href="https://localhost:44379/SMartPhones/Details?id=25" class="bnt2">Galaxy Note 20 Ultra-5G</a>
+                <img src="~/Image/20-ultra 200x200.jpg" width="200" height="200" />
+            </div>
+            <div class="box">
+                <i class="fas fa-users fa-4x"></i>
+                <a href="https://localhost:44379/SMartPhones/Details?id=26" class="bnt2">Galaxy A52-5G</a>
+                <img src="~/Image/A52s 5G.jpeg" width="200" height="200" />
+            </div>
+            <div class="box">
+                <i class="fas fa-users fa-4x"></i>
+                <a href="https://localhost:44379/SMartPhones/Details?id=27" class="bnt2">Galaxy M52-5G</a>
+                <img src="~/Image/Galaxy M52 5G.jpg" width="200" height="200" />
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="info">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/%EC%82%BC%EC%84%B1%EC%83%81%ED%9A%8C.jpg" alt="">
+            <div>
+                <h2>Lịch Sử SamSung</h2>
+                <p>Năm 1938, vào thời kỳ Bán đảo Triều Tiên còn đang nằm dưới sự quản lý, chiếm đóng của chính phủ và quân đội Đế quốc Nhật Bản, Lee Byung-chul (1910-1987), người xuất thân trong một gia tộc địa chủ tư sản ở vùng Uiryeong đã cùng gia đình chuyển tới sinh sống gần thành phố Daegu và sáng lập ra Samsung Sanghoe (삼성상회, 三星商會)</p>
+                <a href="https://vi.wikipedia.org/wiki/Samsung" class="btn">Xem thêm</a>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section class="portfolio">
+            <img src="https://images.samsung.com/in/smartphones/galaxy-note20/buy/001-note20series-productimage-mo-720.jpg?imwidth=720" width="250" height="250" alt="">
+            <img src="https://images.samsung.com/vn/smartphones/galaxy-z-flip3-5g/buy/zflip3_carousel_marketingsinglekv_ex_mo.jpg" width="250" height="250" alt="">
+            <img src="https://www.esdorado.com/817-large_default/samsung-tv-65ru7170-new-65-led-4k-smart.jpg" width="250" height="250" alt="">
+            <img src="https://hc.com.vn/i/ecommerce/media/AV.002182_FEATURE_82461.jpg" width="250" height="250" alt="">
+            <img src="https://manhnguyen.com.vn/img/uploads/webp_image/500x-tu-lanh-samsung-rs64t5f01b4-1598448467.jpg.webp" width="250" height="250" alt="">
+            <img src="https://manhnguyen.com.vn/img/uploads/webp_image/500x-8412_tu_lanh_samsung_rt50k6631bssv_tot.jpg.webp" width="250" height="250" alt="">
+            <img src="https://manhnguyen.com.vn/img/uploads/webp_image/500x-tu-lanh-samsung-rs64t5f01b4-1598448467.jpg.webp" width="250" height="250" alt="">
+            <img src="https://dienmayphanthanh.com/attachments/product/1553307243/76e309e31340833a082f8024ad2c82b0.jpg" width="250" height="250" alt="">
+            <img src="https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/649/10045566-may-loc-khong-khi-samsung-ax34r3020ww-sv-1.jpg" width="250" height="250" alt="">
+            <img src="https://cdn01.dienmaycholon.vn/filewebdmclnew/public/picture/product/product11052/product_11052_1.png" width="250" height="250" alt="">
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>SamSung By Minh Nhựt<p>
+        </footer>
+
+    </div>
+    <!-- Wrapper Ends -->
+
+</body>
+</html>
+
